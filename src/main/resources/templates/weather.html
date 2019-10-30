@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pl-PL">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather</title>
+</head>
+<body>
+
+<div >
+
+    <h2 th:text="${data.name}"></h2>
+    <table>
+        <tbody>
+        <tr>
+            <th scope="col">Temp</th>
+            <th scope="col">Humidity</th>
+            <th scope="col">Pressure</th>
+            <th scope="col">Wind Speed</th>
+        </tr>
+            <tr>
+                <td th:text="${#numbers.formatDecimal(data.main.temp - 273.15, 1, 1)} + ' C'"></td>
+                <td th:text="${data.main.humidity} + ' %'"></td>
+                <td th:text="${data.main.pressure} + ' hPa'"></td>
+                <td th:text="${data.wind.speed} + ' m/s'"></td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+
+<br>
+
+<a th:href="@{/}"><button>Search again</button></a>
+
+</body>
+</html>

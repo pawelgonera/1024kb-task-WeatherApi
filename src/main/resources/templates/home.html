@@ -1,12 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org" lang="pl-PL">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Home</title>
 </head>
 <body>
 
-<h1>Hello!</h1>
+
+<!--<div th:if="${weather.isEmpty()}">-->
+
+    <form th:action="@{/search}" method="post">
+        <h2>Search for city:</h2>
+        <input type="text" placeholder="city" name="city">
+        <button type="submit">Search</button>
+    </form>
+
+<!--</div>-->
+
+<br>
+
+<div ><!--th:if="not ${weather.isEmpty()}">-->
+
+    <!--<p th:text="${weather}"></p>-->
+
+</div>
 
 </body>
 </html>
